@@ -26,6 +26,78 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.upgrade_selected = false
+
+room_goto(room0)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !global.upgrade_selected &amp;&amp; mouse_check_button_pressed(mb_left) {
+    if position_meeting(mouse_x, mouse_y, id) {
+       //room_goto(mainroom)
+       switch(image_index) {
+           case 0:
+                global.aspeed += 1;
+                global.maxspeed += 1;
+                break
+           case 1:
+                global.width += 1;
+                break
+           case 2:
+                global.turnspeed += 1;
+                break
+           case 3:
+                global.bfriction += 1;
+                break
+       }
+       image_index += 4;
+       global.upgrade_selected = true
+       alarm_set(0, room_speed * 1)
+    }
+
+}
 </string>
           </argument>
         </arguments>

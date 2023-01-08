@@ -20,13 +20,9 @@
   <width>160</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\ssupgrades_0.png</frame>
-    <frame index="1">images\ssupgrades_1.png</frame>
-    <frame index="2">images\ssupgrades_2.png</frame>
-    <frame index="3">images\ssupgrades_3.png</frame>
-    <frame index="4">images\ssupgrades_4.png</frame>
-    <frame index="5">images\ssupgrades_5.png</frame>
-    <frame index="6">images\ssupgrades_6.png</frame>
-    <frame index="7">images\ssupgrades_7.png</frame>
+    <frame index="0">images\ssupgrade_selected_0.png</frame>
+    <frame index="1">images\ssupgrade_selected_1.png</frame>
+    <frame index="2">images\ssupgrade_selected_2.png</frame>
+    <frame index="3">images\ssupgrade_selected_3.png</frame>
   </frames>
 </sprite>

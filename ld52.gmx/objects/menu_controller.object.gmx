@@ -8,6 +8,60 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.turnspeed = 0;
+global.aspeed = 0; // accel
+global.bfriction = 0;
+global.maxspeed = 0;
+global.width = 0;
+
+global.turnspeed_s[0] = 3;
+global.turnspeed_s[1] = 5
+global.turnspeed_s[2] = 7
+global.turnspeed_s[3] = 9
+global.aspeed_s[0] = 0.1
+global.aspeed_s[1] = 0.3
+global.aspeed_s[2] = 0.5
+global.aspeed_s[3] = 0.7
+ 
+global.bfriction_s[0] = 0.05
+global.bfriction_s[1] = 0.1
+global.bfriction_s[2] = 0.15
+global.bfriction_s[3] = 0.2
+
+global.maxspeed_s[0] = 2
+global.maxspeed_s[1] = 3
+global.maxspeed_s[2] = 4
+global.maxspeed_s[3] = 5
+
+global.width_s[0] = 1
+global.width_s[1] = 1.5
+global.width_s[2] = 2
+global.width_s[3] = 2.5
+
+
+global.upgrade_selected = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="1">
       <action>
         <libid>1</libid>

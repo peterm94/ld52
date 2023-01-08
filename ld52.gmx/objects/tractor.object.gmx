@@ -31,12 +31,11 @@ mdir = 0;
 xspeed = 0;
 yspeed = 0;
 
-turnspeed = 6;
+//turnspeed = 6;
 nfriction = 0.05;
-bfriction = 0.1;
-aspeed = 0.4;
-rspeed = aspeed * 0.3;
-maxspeed = 4;
+//bfriction = 0.1;
+//aspeed = 0.4;
+//maxspeed = 4;
 
 global._part_system = part_system_create();
 
@@ -94,18 +93,18 @@ part_emitter_stream(global._part_system, global._part_emitter_0, global._part_ty
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check(ord('A'))) {
-   mdir += turnspeed;
+   mdir += global.turnspeed_s[global.turnspeed];
 }
 
 
 if (keyboard_check(ord('D'))) {
-   mdir -= turnspeed;
+   mdir -= global.turnspeed_s[global.turnspeed];
 }
 
 
 if (keyboard_check(ord('W'))) {
-   xspeed += lengthdir_x(aspeed, image_angle)
-   yspeed += lengthdir_y(aspeed, image_angle)
+   xspeed += lengthdir_x(global.aspeed_s[global.aspeed], image_angle)
+   yspeed += lengthdir_y(global.aspeed_s[global.aspeed], image_angle)
    
 }
 
@@ -116,17 +115,26 @@ image_angle = mdir;
 
 // clamp max speed
 n = sqrt(sqr(xspeed) +  sqr(yspeed))
-if (n &gt; maxspeed) {
-    f = maxspeed / n
+if (n &gt; global.maxspeed_s[global.maxspeed]) {
+    f = global.maxspeed_s[global.maxspeed] / n
     xspeed *= f
     yspeed *= f
+}
+
+if instance_place(x + xspeed, y + yspeed, oosolid) {
+   if instance_place(x + xspeed, y, oosolid) {
+      xspeed *= -1;
+   }
+   if instance_place(x, y + yspeed, oosolid) {
+      yspeed *= -1;
+   }
 }
    
 x += xspeed;
 y += yspeed;
 
 if (keyboard_check(ord('S'))) {
-   mfriction = bfriction;
+   mfriction = global.bfriction_s[global.bfriction];
 } else {
    mfriction = nfriction;
 }

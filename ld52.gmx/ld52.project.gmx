@@ -24,6 +24,7 @@
     <object>objects\menu_controller</object>
     <object>objects\upgrade_controller</object>
     <object>objects\upgrade</object>
+    <object>objects\oosolid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mainroom</room>
