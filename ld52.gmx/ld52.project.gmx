@@ -9,9 +9,11 @@
     <sprite>sprites\ssgrain</sprite>
     <sprite>sprites\sstractor</sprite>
     <sprite>sprites\ssfence</sprite>
+    <sprite>sprites\ssupgrades</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgfield</background>
+    <background>background\bgmain</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -19,8 +21,13 @@
     <object>objects\controller</object>
     <object>objects\tractor</object>
     <object>objects\fence</object>
+    <object>objects\menu_controller</object>
+    <object>objects\upgrade_controller</object>
+    <object>objects\upgrade</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\mainroom</room>
+    <room>rooms\upgrades</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

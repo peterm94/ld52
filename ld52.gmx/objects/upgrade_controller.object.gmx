@@ -25,41 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// create field
-var fwidth = 16;
-var fheight = 16;
-var fx = 100;
-var fy = 100;
-for (var i = 1; i &lt; fwidth - 1; i++) {
-    for (var j = 1; j &lt; fheight - 1; j++) {
-        instance_create(fx + i * 8, fy + j * 8, grain);
-    }
+            <string>// 0 - speed
+// 1 - width
+// 2 - steering
+// 3 - brakes
+randomize()
+upgrades_list = ds_list_create();
+ds_list_add(upgrades_list, 0, 1, 2, 3);
+ds_list_shuffle(upgrades_list);
+
+var u1_id = ds_list_find_value(upgrades_list, 0);
+var u2_id = ds_list_find_value(upgrades_list, 1);
+var u1 = instance_create(room_width / 2, 100, upgrade);
+with (u1) {
+     image_index = u1_id;
 }
 
-for (var i = 0; i &lt; fwidth; i+=4) {
-    var f = instance_create(fx + i * 8, fy, fence);
-    with(f) {
-            direction = 90;
-            image_angle = 90
-    }
-    
-    var f = instance_create(fx + i * 8, fy + fheight * 8, fence);
-    with(f) {
-            direction = 90;
-            image_angle = 90
-    }
+var u2 = instance_create(room_width / 2, 196, upgrade);
+with (u2) {
+     image_index = u2_id;
 }
 
-
-for (var i = 0; i &lt; fheight; i+=4) {
-    var f = instance_create(fx, fy + i * 8, fence);
-    var f = instance_create(fx + fwidth * 8, fy + i * 8, fence);
-}
-
-//physics_world_create(1/8);
-//physics_world_gravity(0, 0);
-
-instance_create(300, 310, tractor);
 </string>
           </argument>
         </arguments>

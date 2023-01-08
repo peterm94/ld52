@@ -31,7 +31,7 @@ mdir = 0;
 xspeed = 0;
 yspeed = 0;
 
-turnspeed = 5;
+turnspeed = 6;
 nfriction = 0.05;
 bfriction = 0.1;
 aspeed = 0.4;
