@@ -25,39 +25,56 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// 0 - speed
-// 1 - width
-// 2 - steering
-// 3 - brakes
-randomize()
-upgrades_list = ds_list_create();
-if global.turnspeed != 3 {
-   ds_list_add(upgrades_list, 2);
-}
-if global.aspeed != 3 {
-   ds_list_add(upgrades_list, 0);
-}
-if global.bfriction != 3 {
-   ds_list_add(upgrades_list, 3);
-}
-if global.width != 3 {
-   ds_list_add(upgrades_list, 1);
-}
-
-ds_list_shuffle(upgrades_list);
-
-var u1_id = ds_list_find_value(upgrades_list, 0);
-var u2_id = ds_list_find_value(upgrades_list, 1);
-var u1 = instance_create(room_width / 2, 100, upgrade);
-with (u1) {
-     image_index = u1_id;
-}
-
-var u2 = instance_create(room_width / 2, 196, upgrade);
-with (u2) {
-     image_index = u2_id;
-}
-
+            <string>alarm[0] = room_speed * 10;
+alarm[1] = room_speed * 0.5;
+colour = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>colour = !colour
+alarm[1] = room_speed * 0.5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy(id);
 </string>
           </argument>
         </arguments>
@@ -80,12 +97,16 @@ with (u2) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-var old = draw_get_colour();
-draw_set_halign(fa_center);
+            <string>draw_set_halign(fa_center);
 draw_set_font(font0);
-draw_set_colour(make_colour_rgb(139, 101, 0));
-draw_text(window_get_width() / 2, 20, "Choose an upgrade");
+
+var old = draw_get_colour();
+if colour {
+   draw_set_colour(make_colour_rgb(139, 101, 0));
+} else {
+   draw_set_colour(c_black)
+}
+draw_text(window_get_width() / 2, 20, "COLLECT ALL OF THE GRAIN#USE WASD TO MOVE");
 draw_set_colour(old);
 </string>
           </argument>
